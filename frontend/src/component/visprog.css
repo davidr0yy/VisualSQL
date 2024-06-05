@@ -1,0 +1,50 @@
+.blockly-div {
+    padding-top: 100px;
+  }
+
+.center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px; /* Optional, adds space above the container */
+}
+
+.center-container h2 {
+  text-align: center; /* Center the text */
+  margin-bottom: 10px; /* Adjusts space between text and image */
+  width: 100%; /* Ensure the text takes full width */
+}
+
+.center-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 20px 0; /* Adjusts space around the button */
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #1E90FF;
+  border: none;
+  border-radius: 25px; /* Makes the button rounded */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0073e6; /* Darker shade on hover */
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.5);
+}
+

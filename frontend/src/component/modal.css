@@ -1,0 +1,22 @@
+.modal {
+    position: fixed;
+    top: 200px; /* Adjust this value according to your navbar height */
+    left: 0;
+    width: 100%;
+    height: calc(100% - 60px); /* Adjust this value according to your navbar height */
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    overflow: auto;
+    padding-top: 200px; /* Add padding-top to create space below the navbar */
+    display: flex; /* Display the modal when isModalOpen is true */
+    justify-content: center; /* Center the modal horizontally */
+    align-items: center; /* Center the modal vertically */
+  }
+
+  .modal-content {
+    background-color: white;
+    margin: 20% auto;
+    padding: 20px;
+    width: 50%;
+  }
+  

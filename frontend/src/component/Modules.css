@@ -1,0 +1,162 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.modules-container {
+  display: flex;
+  height: 100vh;
+  padding-top: 120px; /* Adjusting padding for the top */
+  font-family: Arial, sans-serif;
+}
+
+.modules-sidebar {
+  padding-top: 120px;
+  width: 300px;
+  height: 100vh;
+  overflow-y: scroll;
+  background: white; /* All white background */
+  color: #333;
+  position: fixed; /* Ensuring the sidebar stays fixed */
+  left: 0;
+  top: 0;
+  bottom: 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Adding shadow for better separation */
+}
+
+.modules-sidebar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.modules-sidebar::-webkit-scrollbar-track {
+  background-color: #F2F0F0;
+}
+
+.modules-sidebar::-webkit-scrollbar-thumb {
+  background-color: #ccc; /* Match the scrollbar color with the all-white theme */
+}
+
+.modules-sidebar h1 {
+  font-size: 24px;
+  padding: 16px;
+  text-align: center;
+  color: #333;
+}
+
+.modules-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.modules-list li {
+  cursor: pointer;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.modules-list li.active {
+  background-color: #e0e0e0; /* Light gray for active */
+  color: #333;
+}
+
+.modules-list li:hover {
+  background-color: #e0e0e0; /* Light gray for hover */
+  color: #333;
+}
+
+.subtopics-list {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.modules-content {
+  flex: 1;
+  padding: 24px;
+  background-color: white; /* All white background */
+  margin-left: 300px; /* Account for the fixed sidebar */
+  width: calc(100% - 300px); /* Adjust width to avoid overflow */
+  overflow-y: auto; /* Ensure content is scrollable */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.modules-content h1 {
+  font-size: 28px;
+  margin-bottom: 16px;
+  color: #333;
+  text-align: center;
+}
+
+.modules-content .markdown-body {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.modules-content pre {
+  background-color: #333;
+  color: #FFF;
+  padding: 16px;
+  border-radius: 8px;
+  position: relative;
+  overflow-x: auto;
+}
+
+.modules-content pre code {
+  font-size: 14px;
+}
+
+.modules-content pre .copy-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #FFD700;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.modules-content pre .copy-button:hover {
+  background-color: #FFC700;
+}
+
+.exercise {
+  background-color: white; /* All white background */
+}
+
+.sql-editor {
+  background-color: #f0f0f0;
+  padding: 20px;
+  margin: 20px 0;
+  font-family: monospace;
+  display: flex;
+  align-items: center;
+}
+
+.sql-editor input {
+  width: 150px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin-right: 10px;
+  font-family: monospace;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.feedback {
+  margin-top: 10px;
+  font-weight: bold;
+}

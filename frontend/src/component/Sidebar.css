@@ -1,0 +1,30 @@
+.sidebar {
+    width: 20%;
+    background-color: #f8f9fa;
+    padding: 120px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+
+.sidebar .progress {
+    margin: 20px 0;
+}
+
+.sidebar .nav {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar .nav-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.sidebar .nav-item.active {
+    background-color: #007bff;
+    color: white;
+}

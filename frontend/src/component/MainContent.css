@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.main-content {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #f8f9fa;
+    padding: 120px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.sidebar .progress {
+    margin: 20px 0;
+}
+
+.sidebar .nav {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar .nav-item {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar .nav-item:hover {
+    background-color: #e0e0e0;
+}
+
+.sidebar .nav-item.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.content {
+    width: 80%;
+    margin-left: 20%;
+    padding: 120px;
+}
+
+.sql-editor {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin: 20px 0;
+    font-family: monospace;
+    display: flex;
+    align-items: center;
+}
+
+.sql-editor input {
+    width: 150px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin-right: 10px;
+    font-family: monospace;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.feedback {
+    margin-top: 10px;
+    font-weight: bold;
+}
