@@ -9,8 +9,9 @@ import Modules from './component/Modules';
 import AuthPage from './component/AuthPage';
 import Visprogpage from './component/Visprogpage';
 import Quizcomp from './component/Quizcomp';
+import RealTimePessimism from './component/RealTimePessimism';
 
-
+import { VideoContext } from './context/VideoContext';
 function App() {
   return (
     <Router>
@@ -21,7 +22,9 @@ function App() {
           <Route component={AuthPage} path="/authpage" exact />
           <Route component={Modules} path="/modules" exact />
           <Route component={Visprogpage} path="/visprogpage" exact />
+          <Route component={Dashboard} path="/dashboard" exact />
           <Route component={Quizcomp} path="/quizcomp" exact />
+          <Route component={RealTimePessimism} path="/realtimepessimism" exact />
         </Switch>
       </AuthProvider>
     </Router>

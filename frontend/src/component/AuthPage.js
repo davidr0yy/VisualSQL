@@ -1,12 +1,12 @@
 import React, { useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import AuthContext from '../context/AuthContext';
 import * as Components from './Components';
 
 function AuthPage() {
-  const [isSignIn, setIsSignIn] = useState(true);
-
+  const [isSignIn, setIsSignIn] = useState(false); // Set default to sign up
   const { registerUser, loginUser } = useContext(AuthContext);
+  const history = useHistory(); // Add useHistory hook
 
   const handleRegisterSubmit = async e => {
     e.preventDefault();
@@ -14,14 +14,26 @@ function AuthPage() {
     const username = e.target.username.value;
     const password = e.target.password.value;
     const password2 = e.target.password2.value;
-    registerUser(email, username, password, password2);
+
+    const registrationSuccess = await registerUser(email, username, password, password2);
+    
+    // Redirect to sign-in form after successful sign-up
+    if (registrationSuccess) {
+      setIsSignIn(true);
+    }
   };
 
   const handleLoginSubmit = async e => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    loginUser(email, password);
+
+    const isAuthenticated = await loginUser(email, password);
+
+    // Redirect to dashboard on successful login
+    if (isAuthenticated) {
+      history.push('/dashboard');
+    }
   };
 
   return (

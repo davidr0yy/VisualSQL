@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 //background whole cont
 export const Container = styled.div`
-  background-color: #fffd92;
+  background-color: #ffffff; /* Changed to white */
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   position: relative;
@@ -24,6 +24,7 @@ export const SignUpContainer = styled.div`
   width: 50%;
   opacity: 0;
   z-index: 1;
+  background-color: #8e24aa; /* Purple color */
   ${(props) =>
     props.signinIn !== true
       ? `
@@ -41,6 +42,7 @@ export const SignInContainer = styled.div`
   transition: all 0.6s ease-in-out;
   left: 0;
   width: 50%;
+  background-color: #ffffff; /* White color */
   z-index: 2;
   ${(props) =>
     props.signinIn !== true ? `transform: translateX(100%);` : null}
@@ -48,7 +50,7 @@ export const SignInContainer = styled.div`
 
 //background fill up field
 export const Form = styled.form`
-  background-color: #fffd92;
+  background-color: #ffffff; /* Changed to white */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -65,7 +67,7 @@ export const Title = styled.h1`
 
 export const Input = styled.input`
   background-color: #ffffff;
-  border: none;
+  border: 1px solid #ccc; /* Light gray border */
   padding: 12px 15px;
   margin: 8px 0;
   width: 100%;
@@ -73,9 +75,9 @@ export const Input = styled.input`
 
 export const Button = styled.button`
   border-radius: 20px;
-  border: 1px solid #e60023;
-  background-color: #e60023;
-  color: #fffd92;
+  border: none;
+  background-color: #8e24aa; /* Purple color */
+  color: #ffffff;
   font-size: 12px;
   font-weight: bold;
   padding: 12px 45px;
@@ -92,13 +94,14 @@ export const Button = styled.button`
 
 //button border of moving panel
 export const GhostButton = styled(Button)`
-  background-color: fffd92;
-  border-color: #fffd92;
+  background-color: #ffffff; /* Changed to white */
+  border-color: #8e24aa; /* Purple border */
+  color: #8e24aa; /* Purple text */
 `;
 
 //forgot your password
-export const Anchor = styled.a` 
-  color: #e60023;
+export const Anchor = styled.a`
+  color: #8e24aa; /* Purple color */
   font-size: 14px;
   text-decoration: none;
   margin: 15px 0;
@@ -118,47 +121,47 @@ export const OverlayContainer = styled.div`
 `;
 
 export const Overlay = styled.div`
-  background: #e60023;
-  background: -webkit-linear-gradient(to right, #fd4104, #e60023);
-  background-clor: #e60023;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 0 0;
-  color: #fffd92;
-  position: relative;
-  left: -100%;
+  display: flex;
   height: 100%;
   width: 200%;
-  transform: translateX(0);
+  left: -100%;
+  position: relative;
   transition: transform 0.6s ease-in-out;
   ${(props) =>
     props.signinIn !== true ? `transform: translateX(50%);` : null}
 `;
 
-export const OverlayPanel = styled.div`
-  position: absolute;
+export const LeftOverlayPanel = styled.div`
+  background-color: #ff4081; /* Pink color */
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   padding: 0 40px;
   text-align: center;
-  top: 0;
   height: 100%;
   width: 50%;
-  transform: translateX(0);
-  transition: transform 0.6s ease-in-out;
-`;
-
-export const LeftOverlayPanel = styled(OverlayPanel)`
   transform: translateX(-20%);
+  transition: transform 0.6s ease-in-out;
   ${(props) =>
     props.signinIn !== true ? `transform: translateX(0);` : null}
 `;
 
-export const RightOverlayPanel = styled(OverlayPanel)`
+export const RightOverlayPanel = styled.div`
+  background-color: #8e24aa; /* Purple color */
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  height: 100%;
+  width: 50%;
   right: 0;
   transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
   ${(props) =>
     props.signinIn !== true ? `transform: translateX(20%);` : null}
 `;

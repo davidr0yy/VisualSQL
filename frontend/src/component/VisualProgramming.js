@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import * as Blockly from 'blockly/core';
 import 'blockly/blocks';
-import { pythonGenerator as Python } from 'blockly/python'; // Import Python generator
+import { pythonGenerator as Python } from 'blockly/python';
 import { defineSelectBlocks } from '../blocks/select';
 import { defineTableBlocks } from '../blocks/tablesAndAttributes';
 import { defineAliasBlocks } from '../blocks/aliases';
@@ -11,15 +11,20 @@ import { defineValueInputBlocks } from '../blocks/valueInputs';
 import { defineAggregateBlocks } from '../blocks/aggregateBlocks';
 import './visprog.css';
 import axios from 'axios';
-import blockDiagram from '../collegediagram.png'; // Import your image
+import blockDiagram from '../collegediagram.png';
+import RealTimePessimism from './RealTimePessimism';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom';
 
 const VisualProgramming = () => {
   const [workspace, setWorkspace] = useState(null);
   const [queryResult, setQueryResult] = useState(null);
   const [error, setError] = useState(null);
+  const [pessimisticLevel, setPessimisticLevel] = useState('low');
+  const [showGuideSidebar, setShowGuideSidebar] = useState(false);
 
   useEffect(() => {
-    // Define all custom blocks before initializing Blockly
     defineSelectBlocks();
     defineTableBlocks();
     defineAliasBlocks();
@@ -91,7 +96,7 @@ const VisualProgramming = () => {
   const generateQuery = () => {
     if (workspace) {
       const code = Python.workspaceToCode(workspace);
-      console.log('Generated Query:', code);  // Log the generated query
+      console.log('Generated Query:', code);
       return code;
     }
     return '';
@@ -106,24 +111,69 @@ const VisualProgramming = () => {
         },
       });
       setQueryResult(response.data);
+      setError(null);
+      setShowGuideSidebar(false); // Hide guide sidebar if query is successful
     } catch (error) {
       setError(error);
-      console.error('Axios Error:', error);  // Log the error
+      console.error('Axios Error:', error);
+      setShowGuideSidebar(true); // Show guide sidebar if there's an error
     }
+  };
+
+  const renderTable = (data) => {
+    if (!Array.isArray(data) || data.length === 0) {
+      return <p>No data available</p>;
+    }
+
+    const headers = Object.keys(data[0]);
+
+    return (
+      <div className="table-container">
+        <table>
+          <thead>
+            <tr>
+              {headers.map((header) => (
+                <th key={header}>{header}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((row, index) => (
+              <tr key={index}>
+                {headers.map((header) => (
+                  <td key={header}>{row[header]}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
   };
 
   return (
     <div>
+      <RealTimePessimism onPessimismLevelChange={setPessimisticLevel} />
       <div id="blocklyDiv" style={{ width: '100%', height: '600px', paddingTop: '100px' }} />
       <div className="button-container">
         <button onClick={executeQuery}>Execute Query</button>
       </div>
-      {queryResult && <pre>{JSON.stringify(queryResult, null, 2)}</pre>}
+      {queryResult && renderTable(queryResult)}
       {error && <p>Error: {error.message}</p>}
+      {showGuideSidebar && (
+        <div className="guide-sidebar">
+          <h2>Need Help?</h2>
+          <p>It looks like there was an issue with your query. Here are some tips to help you out:</p>
+          <ul>
+            <li><Link to="/modules/">Go to module page</Link></li>
+          </ul>
+        </div>
+      )}
       <div className="center-container">
         <h2>Class Diagram</h2>
         <img src={blockDiagram} alt="Class Diagram" />
       </div>
+      <ToastContainer />
     </div>
   );
 };

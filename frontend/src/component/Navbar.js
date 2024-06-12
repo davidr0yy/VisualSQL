@@ -16,12 +16,12 @@ function Navbar() {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg fixed-top navbar-light" style={{ backgroundColor: "#FFFD92" }}>
+      <nav className="navbar navbar-expand-lg fixed-top navbar-light" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
-            <img style={{ width: '120px', padding: '6px' }} src="https://i.imgur.com/juL1aAc.png" alt="" />
+          <Link className="navbar-brand" to={token ? "/dashboard" : "/"}>
+            <img style={{ width: '80px', padding: '6px' }} src="https://i.imgur.com/juL1aAc.png" alt="" />
           </Link>
-          <button
+          <button 
             className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
@@ -34,17 +34,6 @@ function Navbar() {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
-              <li className="nav-item">
-                <Link className="nav-link font-weight-bold" to="/">Homepage</Link>
-              </li>
-              {token === null && (
-                <>
-                  <li className="nav-item">
-                    <Link className="nav-link" to="/authpage">AuthPage</Link>
-                  </li>
-                </>
-              )}
-
               {token !== null && (
                 <>
                   <li className="nav-item">
@@ -62,6 +51,7 @@ function Navbar() {
                   <li className="nav-item">
                     <Link className="nav-link font-weight-bold" to="/visprogpage">Visual Programming</Link>
                   </li>
+
                 </>
               )}
             </ul>

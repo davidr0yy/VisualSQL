@@ -1,6 +1,6 @@
 .blockly-div {
-    padding-top: 100px;
-  }
+  padding-top: 100px;
+}
 
 .center-container {
   display: flex;
@@ -48,3 +48,99 @@ button:focus {
   box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.5);
 }
 
+.table-container {
+  margin: 20px auto;
+  overflow-x: auto;
+  width: 80%; /* Adjust width to fit better */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1em;
+  font-family: Arial, sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+table thead tr {
+  background-color: #800080; /* Purple color */
+  color: #ffffff;
+  text-align: left;
+}
+
+table th,
+table td {
+  padding: 12px 15px;
+}
+
+table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+table tbody tr:last-of-type {
+  border-bottom: 2px solid #800080; /* Purple color */
+}
+
+table tbody tr.active-row {
+  font-weight: bold;
+  color: #800080; /* Purple color */
+}
+
+/* Guide Sidebar Styles */
+.guide-sidebar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background-color: #f8f9fa;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  padding: 40px 20px; /* Add padding top and bottom */
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto; /* Add scroll for overflow */
+  margin-top: 60px; /* Adjust margin to avoid cutting text */
+}
+
+.guide-sidebar h2 {
+  margin-top: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.guide-sidebar p {
+  margin: 20px 0;
+  text-align: center;
+  word-wrap: break-word; /* Ensure long words are broken */
+}
+
+.guide-sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+}
+
+.guide-sidebar ul li {
+  margin: 10px 0;
+  width: 100%;
+}
+
+.guide-sidebar ul li a {
+  text-decoration: none;
+  color: #007bff;
+  transition: color 0.3s;
+  display: block;
+  text-align: center;
+  word-wrap: break-word; /* Ensure long words are broken */
+}
+
+.guide-sidebar ul li a:hover {
+  color: #0056b3;
+}

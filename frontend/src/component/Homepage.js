@@ -6,7 +6,6 @@ import './Homepage.css';
 function Homepage() {
   return (
     <div className='landing-container'>
-      <video src='/videos/landing.mp4' autoPlay loop muted />
       <h1>!dlroW olleH</h1>
       <p>Welcome to Visual SQL, your friendly companion.</p>
       <div className='hero-btns'>
@@ -23,7 +22,7 @@ function Homepage() {
           buttonSize='btn--large'
           onClick={console.log('hey')}
         >
-          Learn More
+          SIGN-IN
         </Button>
       </div>
     </div>

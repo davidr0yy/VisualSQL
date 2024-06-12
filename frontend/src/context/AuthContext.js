@@ -75,8 +75,8 @@ export const AuthProvider = ({ children }) => {
                 email, username, password, password2
             })
         });
+    
         if (response.status === 201) {
-            history.push("/login");
             swal.fire({
                 title: "Registration Successful, Login Now",
                 icon: "success",
@@ -86,6 +86,7 @@ export const AuthProvider = ({ children }) => {
                 timerProgressBar: true,
                 showConfirmButton: false,
             });
+            return true;
         } else {
             swal.fire({
                 title: "An Error Occurred " + response.status,
@@ -96,8 +97,9 @@ export const AuthProvider = ({ children }) => {
                 timerProgressBar: true,
                 showConfirmButton: false,
             });
+            return false;
         }
-    };
+    };  
 
     const logoutUser = () => {
         setAuthTokens(null);

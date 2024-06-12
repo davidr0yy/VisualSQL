@@ -112,3 +112,17 @@ class Class(models.Model):
 
     class Meta:
         db_table = 'Class'
+
+class PessimismPrediction(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    interaction_type = models.CharField(max_length=50)
+    attempts = models.IntegerField()
+    errors = models.IntegerField()
+    correct = models.IntegerField()
+    emotion = models.CharField(max_length=50)
+    head_pose = models.CharField(max_length=50)
+    pessimism_level = models.CharField(max_length=50)
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.user.username} - {self.interaction_type} - {self.pessimism_level}'

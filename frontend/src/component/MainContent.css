@@ -18,7 +18,7 @@ body {
     left: 0;
     top: 0;
     bottom: 0;
-}
+}   
 
 .sidebar .progress {
     margin: 20px 0;
@@ -45,7 +45,7 @@ body {
 }
 
 .content {
-    width: 80%;
+    width: 60%;
     margin-left: 20%;
     padding: 120px;
 }
@@ -79,4 +79,53 @@ button {
 .feedback {
     margin-top: 10px;
     font-weight: bold;
+}
+
+.hidden-video {
+    opacity: 0;
+    position: absolute; 
+    width: 640px;  /* Ensure it has dimensions */
+    height: 480px; /* Ensure it has dimensions */
+    z-index: -1;
+}
+
+.suggestion-sidebar {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 20%;
+    height: 100%;
+    background-color: #f8f9fa;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 120px 20px 20px 20px; /* Added padding-top of 120px */
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.suggestion-sidebar h2 {
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+.suggestion-sidebar p {
+    margin: 20px 0;
+}
+
+.suggestion-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.suggestion-sidebar ul li {
+    margin: 10px 0;
+}
+
+.suggestion-sidebar ul li a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s;
+}
+
+.suggestion-sidebar ul li a:hover {
+    color: #0056b3;
 }
