@@ -1,6 +1,9 @@
-# JWT-Django-Rest-Framework-React
+# VISUALSQL
 
-We will go over the entire authentication process using Django and React in this tutorial series. From project setup to git setup to backend configuration to JWT (access + refresh) configuration to building APIs and private route end points. Then to frontend using react , setup our projects, implement route-guards, preserving user information in the browser, and pure react hooks (no Redux), these are what we'd be covering in the series. This video will be broken into two parts: the front end, which will set up the CLient side, and the back end, which will create the APIs.
+This paper presents the development and evaluation of VisualSQL, an Intelligent Tutoring System (ITS) aimed atimproving SQL learning through the detection of pessimistic behavior in students. VisualSQL integrates Convolutional Neural Networks (CNNs) for facial expression analysis and a Rule-Based Expert System to provide personalized feedback
+and assessments. The study employed a descriptivedevelopmental methodology and followed an iterative Scrum process. The system achieved a 92% detection accuracy, demonstrating its effectiveness in enhancing student engagement and learning outcomes. A dataset of 10,000 facial expression images with 70,000 annotations (7 per image) was
+used to train the CNN model. Evaluation involved 37 students, 1 psychologist, and 4 IT experts. The Technology Acceptance Model (TAM) was utilized for user acceptance, while expert evaluation, based on ISO-25010 standards, confirmed the system's functional stability, performance efficiency, and usability. Visual SQL’s mean Average Precision (mAP@0.5) across all classes was 0.945. User feedback indicated high perceived usefulness (4.52/5) and ease of use (4.72/5), with experts rating the user interface highly for intuitiveness (4.89/5). The system’s weakest aspect was data encryption strength, rated at 3.89/5.
+
 
 
 <h3>Views</h3>
